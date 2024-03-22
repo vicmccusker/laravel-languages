@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    protected $hidden = ['updated_at', 'created_at'];
+    protected $hidden = ['updated_at', 'created_at', 'difficulty_id', 'continent_id', 'spoken-by', 'pivot'];
 
     use HasFactory;
 

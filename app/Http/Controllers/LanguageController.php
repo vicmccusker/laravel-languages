@@ -11,7 +11,7 @@ class LanguageController extends Controller
 
         return response()->json([
             'message' => 'languages returned',
-            'data' => Language::with(['difficulty:id,name', 'continent:id,name', 'friends:id,name'])->get(),
+            'data' => Language::with(['difficulty:id,name', 'continent:id,name', 'friends:id,name,email'])->get(),
         ]);
 
     }

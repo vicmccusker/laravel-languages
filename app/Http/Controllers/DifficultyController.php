@@ -11,7 +11,7 @@ class DifficultyController extends Controller
 
         return response()->json([
             'message' => 'difficulties returned',
-            'data' => Difficulty::with(['language:id,name'])->get()->makeHidden(['created_at', 'updated_at']),
+            'data' => Difficulty::with(['language:name,difficulty_id'])->get()->makeHidden(['created_at', 'updated_at']),
         ]);
 
     }

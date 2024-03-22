@@ -11,7 +11,7 @@ class FriendController extends Controller
 
         return response()->json([
             'message' => 'languages returned',
-            'data' => Friend::with(['languages:id,name'])->get(),
+            'data' => Friend::with(['languages:name'])->get(),
         ]);
 
     }

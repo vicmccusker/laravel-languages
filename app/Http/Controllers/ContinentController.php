@@ -11,7 +11,7 @@ class ContinentController extends Controller
 
         return response()->json([
             'message' => 'continents returned',
-            'data' => Continent::with(['language:id,name'])->get(),
+            'data' => Continent::with(['language:name,continent_id'])->get(),
         ]);
     }
 }
