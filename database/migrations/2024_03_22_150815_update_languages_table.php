@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('languages', function (Blueprint $table) {
             $table->foreignId('continent_id');
+            $table->integer('spoken_by');
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('languages', function (Blueprint $table) {
             $table->dropColumn('continent_id');
+            $table->integer('spoken_by');
         });
     }
 };
