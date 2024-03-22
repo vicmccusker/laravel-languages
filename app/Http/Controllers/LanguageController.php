@@ -34,17 +34,6 @@ class LanguageController extends Controller
 
     public function create(\Illuminate\Http\Request $request)
     {
-
-        $request->validate([
-            'name' => 'required|string|max:30',
-            'description' => 'required|string',
-            'spoken_by' => 'required|integer',
-            'difficulty_id' => 'required|integer|exists:difficulties,id',
-            'continent_id' => 'required|integer|exists:continents,id',
-            'friends_ids' => 'array',
-            'friends_ids.*' => 'integer|exists:friends,id',
-        ]);
-
         $language = new Language();
         $language->name = $request->name;
         $language->description = $request->description;
