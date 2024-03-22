@@ -15,4 +15,20 @@ class LanguageController extends Controller
         ]);
 
     }
+
+    public function find(int $id)
+    {
+        $language = Language::with(['difficulty:id,name', 'continent:id,name', 'friends:id,name,email'])->find($id);
+
+            if (!$language) {
+
+                return response()->json([
+                    'message' => 'language not found']);
+            }
+
+        return response()->json([
+            'message' => 'language found',
+            'data' => Language::with(['difficulty:id,name', 'continent:id,name', 'friends:id,name,email'])->find($id)
+        ]);
+    }
 }

@@ -8,6 +8,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/languages', [\App\Http\Controllers\LanguageController::class, 'get']);
+Route::get('/languages/{id}', [\App\Http\Controllers\LanguageController::class, 'find']);
+
 Route::get('/difficulties', [\App\Http\Controllers\DifficultyController::class, 'get']);
 Route::get('/continents', [\App\Http\Controllers\ContinentController::class, 'get']);
 Route::get('/friends', [\App\Http\Controllers\FriendController::class, 'get']);
