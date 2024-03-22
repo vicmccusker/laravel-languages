@@ -10,7 +10,8 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/languages', [\App\Http\Controllers\LanguageController::class, 'get']);
 Route::get('/languages/{id}', [\App\Http\Controllers\LanguageController::class, 'find']);
-Route::post('/languages', [\App\Http\Controllers\LanguageController::class, 'create'])->middleware(LanguageValidator::class);;
+Route::post('/languages', [\App\Http\Controllers\LanguageController::class, 'create'])->middleware(LanguageValidator::class);
+Route::put('/languages/{id}', [\App\Http\Controllers\LanguageController::class, 'update']);
 
 Route::get('/difficulties', [\App\Http\Controllers\DifficultyController::class, 'get']);
 Route::get('/continents', [\App\Http\Controllers\ContinentController::class, 'get']);
