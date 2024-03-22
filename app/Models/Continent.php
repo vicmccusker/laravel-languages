@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Continent extends Model
 {
-    public $hidden = ['id', 'created_at', 'updated_at'];
+    public $hidden = ['created_at', 'updated_at'];
 
     use HasFactory;
 

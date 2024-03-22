@@ -22,33 +22,29 @@ class LanguageTest extends TestCase
             ->assertJson(function (AssertableJson $json) {
                 $json->hasAll(['message', 'data'])
                     ->whereType('message', 'string')
-                    ->has('data', function (AssertableJson $json) {
+                    ->has('data', 1, function (AssertableJson $json) {
                         $json->hasAll(['id', 'name', 'description', 'difficulty', 'continent', 'friends'])
                             ->whereAllType([
                                 'id' => 'integer',
                                 'name' => 'string',
                             ])
-                            ->has('difficulties', function (AssertableJson $json) {
+                            ->has('difficulty', function (AssertableJson $json) {
                                 $json->hasAll(['id', 'name'])
                                     ->whereAllType([
                                         'id' => 'integer',
+                                        'name' => 'string']);
+
+                            })->has('continent', function (AssertableJson $json) {
+                                $json->hasAll(['id', 'name'])
+                                    ->whereAllType([
+                                        'id' => 'integer',
+                                        'name' => 'string']);
+                            })->has('friends', 1, function (AssertableJson $json) {
+                                $json->hasAll(['name', 'email'])
+                                    ->whereAllType([
                                         'name' => 'string',
-                                    ])
-                                    ->has('continents', function (AssertableJson $json) {
-                                        $json->hasAll(['id', 'name'])
-                                            ->whereAllType([
-                                                'id' => 'integer',
-                                                'name' => 'string',
-                                            ])
-                                            ->has('friends', 1, function (AssertableJson $json) {
-                                                $json->hasAll(['id', 'name', 'email'])
-                                                    ->whereAllType([
-                                                        'id' => 'integer',
-                                                        'name' => 'string',
-                                                        'email' => 'string',
-                                                    ]);
-                                            });
-                                    });
+                                        'email' => 'string',
+                                    ]);
                             });
                     });
             });

@@ -24,7 +24,7 @@ class LanguageFactory extends Factory
             'description' => $this->faker->paragraph(2),
             'spoken-by' => Friend::factory(),
             'difficulty_id' => Difficulty::factory(),
-            'continents_id' => Continent::factory(),
+            'continent_id' => Continent::factory(),
         ];
     }
 }

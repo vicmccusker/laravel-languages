@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Difficulty extends Model
 {
-    public $hidden = ['id'];
-
     use HasFactory;
 
     public function language(): HasMany
