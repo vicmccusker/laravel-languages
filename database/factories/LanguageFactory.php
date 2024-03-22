@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Continent;
+use App\Models\Difficulty;
+use App\Models\Friend;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,11 @@ class LanguageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence(1),
+            'description' => $this->faker->paragraph(2),
+            'spoken-by' => Friend::factory(),
+            'difficulty_id' => Difficulty::factory(),
+            'continents_id' => Continent::factory(),
         ];
     }
 }

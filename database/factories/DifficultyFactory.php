@@ -17,7 +17,7 @@ class DifficultyFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence(1),
         ];
     }
 }
