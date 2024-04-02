@@ -22,7 +22,6 @@ class LanguageFactory extends Factory
         return [
             'name' => $this->faker->sentence(1),
             'description' => $this->faker->sentence(2),
-            'spoken_by' => Friend::factory(),
             'difficulty_id' => Difficulty::factory(),
             'continent_id' => Continent::factory(),
         ];
