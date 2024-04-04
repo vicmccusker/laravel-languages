@@ -18,7 +18,7 @@ class UserValidator
         $request->validate([
             'name' => 'required|string|max:30',
             'email' => 'required|email:rfc,dns',
-            'password' => ['required', 'regex:/[a-z]|[@$!%*#?&]|[A-Z]/'],
+            'password' => ['required', 'regex:/[a-z][@$!%*#?&][A-Z]/'],
         ]);
 
         return $next($request);
