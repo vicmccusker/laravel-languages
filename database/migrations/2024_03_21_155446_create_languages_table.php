@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('greeting');
+            $table->string('background_image_link');
             $table->string('description');
             $table->foreignId('difficulty_id');
             $table->timestamps();
