@@ -18,11 +18,11 @@ class UserController extends Controller
 
             return response()->json([
                 'message' => 'not saved',
-            ]);
+            ], 422);
         }
 
         return response()->json([
-            'message' => 'saved',
-        ]);
+            'message' => 'Thank you, you have been registered',
+        ], 200);
     }
 }
