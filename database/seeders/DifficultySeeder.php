@@ -18,7 +18,7 @@ class DifficultySeeder extends Seeder
                 'name' => 'Easy',
             ],
             [
-                'name' => 'Medium',
+                'name' => 'Mid',
             ],
             [
                 'name' => 'Hard',
