@@ -14,7 +14,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
 
-        if (!$user->save()) {
+        if (! $user->save()) {
 
             return response()->json([
                 'message' => 'not saved',

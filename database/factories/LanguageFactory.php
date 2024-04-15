@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Continent;
 use App\Models\Difficulty;
-use App\Models\Friend;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

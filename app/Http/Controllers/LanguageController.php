@@ -65,7 +65,7 @@ class LanguageController extends Controller
             'description' => 'required|string',
             'spoken_by' => 'required|integer',
             'difficulty_id' => 'required|integer|exists:difficulties,id',
-            'continent_id' => 'required|integer|exists:continents,id'
+            'continent_id' => 'required|integer|exists:continents,id',
         ]);
 
         $language = Language::find($id);
