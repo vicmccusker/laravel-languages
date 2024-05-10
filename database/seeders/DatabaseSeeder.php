@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             DifficultySeeder::class,
             FriendSeeder::class,
             LinkSeeder::class,
+            RandomWordSeeder::class,
         ]);
 
         User::factory()->create([
