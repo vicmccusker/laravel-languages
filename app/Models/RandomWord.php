@@ -9,7 +9,7 @@ class RandomWord extends Model
 {
     use HasFactory;
 
-    public function languages()
+    public function language()
     {
         return $this->belongsTo(Language::class);
     }

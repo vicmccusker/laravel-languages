@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Continent;
+use App\Models\Difficulty;
+use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,9 @@ class RandomWordsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+
+            'name' => $this->faker->sentence(1),
+            'description' => $this->faker->sentence(2),
         ];
     }
 }

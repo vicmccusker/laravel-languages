@@ -9,10 +9,9 @@ class RandomWordController extends Controller
 {
     public function get()
     {
-
         return response()->json([
             'message' => 'continents returned',
-            'data' => RandomWord::with(['languages:id,name'])->get(),
+            'data' => RandomWord::with(['language:id,name'])->get()->random(1),
         ]);
     }
 }

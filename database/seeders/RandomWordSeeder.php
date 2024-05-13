@@ -15,12 +15,14 @@ class RandomWordSeeder extends Seeder
         $toInsert = [
             [
                 'word' => 'Hola',
-                'description' => 'Spanish for Hello',
+                'description' => 'Hello',
+                'language_id' => '5',
             ],
 
             [
-                'word' => 'Hello',
-                'description' => 'English for Hello',
+                'word' => 'Bonjour',
+                'description' => 'Hello',
+                'language_id' => '2',
             ],
 
         ];
