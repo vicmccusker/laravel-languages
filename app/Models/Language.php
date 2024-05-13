@@ -25,4 +25,9 @@ class Language extends Model
     {
         return $this->belongsToMany(Friend::class);
     }
+
+    public function random_words()
+    {
+        return $this->hasMany(RandomWord::class);
+    }
 }

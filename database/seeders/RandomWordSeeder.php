@@ -16,13 +16,11 @@ class RandomWordSeeder extends Seeder
             [
                 'word' => 'Hola',
                 'description' => 'Spanish for Hello',
-                'language_id' => '1',
             ],
 
             [
                 'word' => 'Hello',
                 'description' => 'English for Hello',
-                'language_id' => '1',
             ],
 
         ];

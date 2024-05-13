@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RandomWords;
+use App\Models\Continent;
+use App\Models\RandomWord;
 
 class RandomWordController extends Controller
 {
@@ -10,9 +11,8 @@ class RandomWordController extends Controller
     {
 
         return response()->json([
-            'message' => 'returned',
-            'data' => RandomWords::with(['language:id,name'])->get(),
+            'message' => 'continents returned',
+            'data' => RandomWord::with(['languages:id,name'])->get(),
         ]);
-
     }
 }
