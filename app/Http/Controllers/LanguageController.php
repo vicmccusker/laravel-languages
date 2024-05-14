@@ -12,7 +12,7 @@ class LanguageController extends Controller
 
         return response()->json([
             'message' => 'languages returned',
-            'data' => Language::with(['difficulty:id,name', 'continent:id,name', 'friends:id,name,email'])->get(),
+            'data' => Language::withCount(['friends'])->orderBy('friends_count', 'desc')->take(3)->get(),
         ]);
 
     }

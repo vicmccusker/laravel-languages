@@ -23,7 +23,7 @@ class Language extends Model
 
     public function friends()
     {
-        return $this->belongsToMany(Friend::class);
+        return $this->belongsToMany(Friend::class)->orderBy('id', 'asc');
     }
 
     public function random()
