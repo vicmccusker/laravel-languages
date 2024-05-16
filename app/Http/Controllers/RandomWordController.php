@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Continent;
 use App\Models\RandomWord;
 
 class RandomWordController extends Controller

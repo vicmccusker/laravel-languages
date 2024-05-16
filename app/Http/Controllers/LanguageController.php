@@ -22,14 +22,14 @@ class LanguageController extends Controller
 
         return response()->json([
             'message' => 'languages returned',
-            'data' => Language::with(['difficulty:id,name', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->get(),
+            'data' => Language::with(['difficulty:id,name,difficulty_image', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->get(),
         ]);
 
     }
 
     public function find(int $id)
     {
-        $language = Language::with(['difficulty:id,name', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->find($id);
+        $language = Language::with(['difficulty:id,name,difficulty_image', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->find($id);
 
         if (! $language) {
 

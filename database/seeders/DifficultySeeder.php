@@ -15,15 +15,15 @@ class DifficultySeeder extends Seeder
         $toInsert = [
             [
                 'name' => 'Easy',
-                'difficulty_image' => 'https://jmp.sh/s/qWOwgfgPfr9G9ZsEUTqT',
+                'difficulty_image' => 'https://svgshare.com/i/168k.svg',
             ],
             [
                 'name' => 'Mid',
-                'difficulty_image' => 'https://jmp.sh/s/YTf4JE3pXkcFRPUpyqZ1',
+                'difficulty_image' => 'https://svgshare.com/i/1681.svg',
             ],
             [
                 'name' => 'Hard',
-                'difficulty_image' => 'https://svgshare.com/s/169c'
+                'difficulty_image' => 'https://svgshare.com/i/169x.svg',
             ],
 
         ];

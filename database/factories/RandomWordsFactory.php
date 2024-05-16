@@ -2,9 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Continent;
-use App\Models\Difficulty;
-use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
