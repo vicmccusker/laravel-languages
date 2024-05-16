@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
-    public function get()
+    public function getPopular()
     {
 
         return response()->json([
@@ -17,9 +17,19 @@ class LanguageController extends Controller
 
     }
 
+    public function get()
+    {
+
+        return response()->json([
+            'message' => 'languages returned',
+            'data' => Language::with(['difficulty:id,name', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->get(),
+        ]);
+
+    }
+
     public function find(int $id)
     {
-        $language = Language::with(['difficulty:id,name', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->take(3)->find($id);
+        $language = Language::with(['difficulty:id,name', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->find($id);
 
         if (! $language) {
 

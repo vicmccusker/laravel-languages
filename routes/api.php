@@ -11,7 +11,8 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/user', [\App\Http\Controllers\UserController::class, 'create'])->middleware(UserValidator::class);
 
-Route::get('/languages', [\App\Http\Controllers\LanguageController::class, 'get']);
+Route::get('/languages', [\App\Http\Controllers\LanguageController::class, 'getPopular']);
+Route::get('/languagesAll', [\App\Http\Controllers\LanguageController::class, 'get']);
 Route::get('/languages/{id}', [\App\Http\Controllers\LanguageController::class, 'find']);
 Route::post('/languages', [\App\Http\Controllers\LanguageController::class, 'create'])->middleware(LanguageValidator::class);
 Route::put('/languages/{id}', [\App\Http\Controllers\LanguageController::class, 'update']);
