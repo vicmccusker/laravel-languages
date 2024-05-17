@@ -10,6 +10,7 @@ class Difficulty extends Model
 {
     use HasFactory;
 
+
     public function language(): HasMany
     {
         return $this->hasMany(Language::class);

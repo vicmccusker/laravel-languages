@@ -29,7 +29,7 @@ class LanguageController extends Controller
 
     public function find(int $id)
     {
-        $language = Language::with(['difficulty:id,name,difficulty_image', 'continent:id,name'])->withCount(['friends'])->orderBy('friends_count', 'desc')->find($id);
+        $language = Language::with(['difficulty:id,name,difficulty_image', 'continent:id,name'])->join('continents', 'continents.id', '=', 'continent_id')->withCount(['friends'])->orderBy('friends_count', 'desc')->find($id);
 
         if (! $language) {
 
